@@ -1,0 +1,94 @@
+@import 'buttons.css';
+
+*{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+body{
+    background-color: #26B4BC;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-inline-size: 900px;
+    block-size: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.player{
+    position: relative;
+}
+
+.player video{
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.player-actions{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-title{
+    color: #EDF5FC;
+    inset-block-start: 20px;
+    inset-inline-start: 20px;
+    position: absolute;
+    font-size: 17px;
+}
+
+.player-progress{
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    padding: 10px;
+}
+
+.player-progress input{
+    flex: 1;
+}
+
+
+.player-overlay{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.player:hover .player-overlay{
+    opacity: 1;
+}
+
+.ellipse-top, .ellipse-bottom{
+    position: absolute;
+}
+
+.ellipse-top{
+    inset-inline-start: -8px;
+}
+
+.ellipse-bottom{
+    inset-inline-end: -8px;
+    inset-block-end: 0;
+}
+
+@media screen and (max-width: 460px){
+    .ellipse-top, .ellipse-bottom{
+        width: 200px;
+    }
+
+    .player-overlay{
+        opacity: 1;
+    }
+}
